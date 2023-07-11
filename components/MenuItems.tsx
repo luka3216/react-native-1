@@ -39,7 +39,7 @@ export default function MenuItems() {
   );
   return (
     <>
-      <FlatList data={menuItemsToDisplay} renderItem={Item}></FlatList>
+      <FlatList data={menuItemsToDisplay} keyExtractor={({id}) => id} renderItem={Item}></FlatList>
     </>
   );
 }
