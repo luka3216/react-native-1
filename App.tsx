@@ -4,12 +4,14 @@ import LittleLemonHeader from './components/LittleLemonHeader';
 import WelcomeScreen from './components/WelcomeScreen';
 import MenuItems from './components/MenuItems';
 import MenuSectionItems from './components/MenuSections';
+import WelcomeWithName from './components/WelcomeWithName';
+import LoginScreen from './components/LoginScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <LittleLemonHeader/>
-      <MenuSectionItems/>
+      <LoginScreen/>
     </View>
   );
 }

@@ -72,6 +72,7 @@ export default function MenuSectionItems() {
       sections={menuItemsToDisplay}
       renderItem={renderItem}
       renderSectionHeader={renderSectionHeader}
+      keyExtractor={({name, price}) => name + price}
     />
   );
 }
