@@ -6,12 +6,13 @@ import MenuItems from './components/MenuItems';
 import MenuSectionItems from './components/MenuSections';
 import WelcomeWithName from './components/WelcomeWithName';
 import LoginScreen from './components/LoginScreen';
+import WelcomeWithLogo from './components/WelcomeWithLogo';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <LittleLemonHeader/>
-      <LoginScreen/>
+      <WelcomeWithLogo/>
     </View>
   );
 }
