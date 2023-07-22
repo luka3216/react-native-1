@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { Image, StyleSheet, Text, View, useColorScheme } from "react-native";
+import { ScreenFunctionComponent } from "../lib/HelperTypes";
 
-export default function WelcomeWithLogo() {
+export default function WelcomeWithLogo({navigation}) : ScreenFunctionComponent {
   const colorScheme = useColorScheme();
   return (
     <View

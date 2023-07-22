@@ -4,12 +4,11 @@ import {
   Text,
   TextInput,
   StyleSheet,
-  FlatList,
-  SectionList,
   Pressable,
 } from "react-native";
+import { ScreenFunctionComponent } from "../lib/HelperTypes";
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) : ScreenFunctionComponent {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,7 +36,7 @@ export default function LoginScreen() {
       ></TextInput>
       <Pressable
         style={styles.loginButton}
-        onPress={() => setIsLoggedIn(true)}
+        onPress={() => navigation.navigate('Welcome')}
       >
         <Text style={styles.loginText}>Login</Text>
       </Pressable>
