@@ -12,39 +12,25 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { IoniconsIconName } from "./lib/HelperTypes";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
+      <Drawer.Navigator
         initialRouteName="Login"
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName: IoniconsIconName;
-            if (route.name === "Welcome") {
-              if (focused) {
-                iconName = "ios-information-circle";
-              } else {
-                iconName = "ios-information-circle-outline";
-              }
-            } else if (route.name === "Login") {
-              if (focused) {
-                iconName = "ios-log-in";
-              } else {
-                iconName = "ios-log-in-outline";
-              }
-            }
-
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-        })}
+        useLegacyImplementation
+        screenOptions={{
+          drawerPosition: 'right',
+        }}
       >
-        <Tab.Screen name="Welcome" component={WelcomeWithLogo}></Tab.Screen>
-        <Tab.Screen name="Login" component={LoginScreen}></Tab.Screen>
-      </Tab.Navigator>
+        <Drawer.Screen name="Welcome" component={WelcomeWithLogo}></Drawer.Screen>
+        <Drawer.Screen name="Login" component={LoginScreen}></Drawer.Screen>
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
